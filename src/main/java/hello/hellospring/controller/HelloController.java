@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HelloController {
     @GetMapping("hello")
-    public String hello(Model model){
+    public String hello(Model model){//Model은 controller->view로 데이터를 전달할 수 있는 데이터 컨테이너.
         model.addAttribute("data","hello!!");
+        //Model객체에 data라는 속성을 추가하였고 그 속성값은 "hello!!"이다.
         return "hello";
 
     }
