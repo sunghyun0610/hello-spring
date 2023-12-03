@@ -11,6 +11,6 @@ public class HelloController {
         model.addAttribute("data","hello!!");
         //Model이라는 객체에 data라는 속성을 추가하였고 속성 값은 hello!!이다.
         return "hello";
-
     }
 }
+
