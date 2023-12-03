@@ -14,3 +14,7 @@ public class HelloController {
 
     }
 }
+/*
+* controller에서 return값으로 문자를 반환하면 viewResolver가 화면을 찾아서 처리한다.
+* 템플릿 viewName 매핑하는 과정 : [resources: templates/] +{ViewName}+.[html]  []값은 알아서 처리해주는 값
+* */
