@@ -19,4 +19,8 @@ public class HelloController {
 * controller에서 return값으로 문자르 반환하면 viewResolver가 화면을 찾아서 처리한다
 * viewName 매핑 : [resources:templates/] + {ViewName} + [.html]
 * */
+<<<<<<< HEAD
 //main branch
+=======
+//sunghyun branch
+>>>>>>> sunghyun
