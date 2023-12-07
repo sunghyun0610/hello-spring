@@ -51,6 +51,7 @@ public class HelloController {
         }
     }
 }
+//결국 동적이냐 API냐 문제
 
 /*
 
