@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
@@ -19,7 +20,38 @@ public class HelloController {
         model.addAttribute("name", name);
         return "hello-template";
     }
+
+    //API 방식
+    @GetMapping("hello-string")
+    @ResponseBody//http body부분에 return 데이터를 바로 넣어 주겠다는 의미
+    public String helloString(@RequestParam("name") String name){
+        return "hello" + name;//"hello spring"이건 view가 없고 바로 이 문자가 그대로 내려감
+
+    }
+
+
+    @GetMapping("hello-api")
+    @ResponseBody//객체를 반환하고 Response Body해놓으면 json을 반환하는 것이 디폴트.
+    public Hello helloApi(@RequestParam("name") String name){
+        Hello hello = new Hello();
+        hello.setName(name);
+        return hello;
+    }
+
+    static class Hello {
+        private String name;//getter&setter단축키 -> alt+insert ,getter/setter : JavaBean 규약
+        //private 라서 외부에서 바로 못 꺼냄 사용할때 메서드를 통해서 접근하게함.
+
+        public String getName() {
+            return name;//메서드는 public으로 염.
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
 }
+
 /*
 
 /*=======
