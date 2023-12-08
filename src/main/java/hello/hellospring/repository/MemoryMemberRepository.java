@@ -34,5 +34,9 @@ public class MemoryMemberRepository implements MemberRepository{
     public List<Member> findAll() {
         return new ArrayList<>(store.values()); // store Map에 있는 member들을 쭉 반환
     }
+
+    public void clearStore(){
+        store.clear();
+    }
 }
 //여기까지 코드 짜고 이게 잘돌아가는지 어떻게 검증하지? ->--테스트 케이스작성
