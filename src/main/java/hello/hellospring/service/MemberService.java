@@ -36,3 +36,4 @@ public class MemberService {
     }
 
 }
+//서비스란
